@@ -1,0 +1,640 @@
+2025-11-19 10:27:01 | INFO | __main__ | Streamlit: RAG zinciri init ediliyor.
+2025-11-19 10:27:01 | INFO | data_processor | [İndeks] Yerel Embedding Modeli yükleniyor: all-MiniLM-L6-v2
+2025-11-19 10:27:05 | INFO | data_processor | [İndeks] Vektör İndeksi 'faiss_index_saglik' diskten yükleniyor...
+2025-11-19 10:27:05 | INFO | rag_chain | RAG zinciri kuruluyor (Model: meta-llama/llama-4-scout-17b-16e-instruct)...
+2025-11-19 10:27:07 | INFO | rag_chain | Reranker CrossEncoder modeli yükleniyor: cross-encoder/ms-marco-MiniLM-L-6-v2
+2025-11-19 10:27:09 | DEBUG | rag_chain | Türkçe çeviri pipeline aktif. Model: llama-3.1-8b-instant
+2025-11-19 10:27:09 | INFO | rag_chain | RAG zinciri başarıyla kuruldu (TR/EN, 3-seviyeli confidence, reranker + sohbet kapanışlı).
+2025-11-19 10:27:09 | INFO | __main__ | Streamlit: RAG zinciri başarıyla init edildi. Available_sources: ["2019 - Grabb and Smith's Plastic Surgery 8th Edition.pdf"]
+2025-11-19 10:28:54 | INFO | __main__ | Yeni PDF yüklendi ve kaydedildi: uploaded_pdfs\Textbook-of-Plastic-and-Reconstructive-Surgery.pdf
+2025-11-19 10:28:54 | INFO | data_processor | [Veri] PDF yükleniyor: uploaded_pdfs\Textbook-of-Plastic-and-Reconstructive-Surgery.pdf
+2025-11-19 10:29:06 | INFO | data_processor | [Veri] Toplam 491 sayfa yüklendi.
+2025-11-19 10:29:06 | INFO | data_processor | [Veri] Parçalama sonrası toplam 971 adet doküman parçası oluşturuldu.
+2025-11-19 10:29:06 | INFO | data_processor | extend_vector_store: Mevcut FAISS indeksine 971 yeni doküman parçası ekleniyor.
+2025-11-19 10:29:23 | INFO | data_processor | extend_vector_store: Güncellenmiş FAISS indeksi diske kaydedildi (faiss_index_saglik).
+2025-11-19 10:29:23 | INFO | rag_chain | RAG zinciri kuruluyor (Model: meta-llama/llama-4-scout-17b-16e-instruct)...
+2025-11-19 10:29:23 | INFO | rag_chain | Reranker CrossEncoder modeli yükleniyor: cross-encoder/ms-marco-MiniLM-L-6-v2
+2025-11-19 10:29:26 | DEBUG | rag_chain | Türkçe çeviri pipeline aktif. Model: llama-3.1-8b-instant
+2025-11-19 10:29:26 | INFO | rag_chain | RAG zinciri başarıyla kuruldu (TR/EN, 3-seviyeli confidence, reranker + sohbet kapanışlı).
+2025-11-19 10:29:26 | INFO | __main__ | Yeni dokümanlar indekse eklendi. Toplam yeni parça: 971, available_sources: ["2019 - Grabb and Smith's Plastic Surgery 8th Edition.pdf", 'Textbook-of-Plastic-and-Reconstructive-Surgery.pdf']
+2025-11-19 10:31:11 | INFO | __main__ | Streamlit: yeni soru alındı.
+2025-11-19 10:31:11 | DEBUG | rag_chain | Allowed_sources: ["2019 - Grabb and Smith's Plastic Surgery 8th Edition.pdf", 'Textbook-of-Plastic-and-Reconstructive-Surgery.pdf']
+2025-11-19 10:31:11 | DEBUG | rag_chain | Soru Türkçe algılandı, İngilizceye çevriliyor...
+2025-11-19 10:31:11 | DEBUG | rag_chain | TR → EN çeviri tamamlandı.
+2025-11-19 10:31:11 | DEBUG | rag_chain | RAG için kullanılacak soru (EN): What are the histological characteristics of the elastic cartilage structure of the external ear (auricle), and how does this structure contribute to the mechanical functions of the ear (shape preservation, flexibility, etc.)?
+2025-11-19 10:31:11 | DEBUG | rag_chain | FAISS'ten 5 doküman döndü. Max skor (confidence): 0.601
+2025-11-19 10:31:12 | DEBUG | rag_chain | Reranker: İlk FAISS sonuç sayısı: 5
+2025-11-19 10:31:12 | DEBUG | rag_chain |   1. skor=2.326 (page=280)
+2025-11-19 10:31:12 | DEBUG | rag_chain |   2. skor=0.314 (page=279)
+2025-11-19 10:31:12 | DEBUG | rag_chain |   3. skor=-3.057 (page=334)
+2025-11-19 10:31:12 | DEBUG | rag_chain | allowed_sources filtresi uygulandı. Önce: 3 doküman, sonra: 3 doküman.
+2025-11-19 10:31:12 | DEBUG | rag_chain | Reranker sonrası kullanılan doküman sayısı: 3
+2025-11-19 10:31:12 | DEBUG | rag_chain | Kaynak sayfalar (0-based index): [279, 280, 334]
+2025-11-19 10:31:12 | DEBUG | rag_chain | RAG çalışma modu: pdf_strong, confidence: 0.601
+2025-11-19 10:31:12 | DEBUG | rag_chain | Kaynak doküman sayısı: 2
+2025-11-19 10:31:12 | DEBUG | rag_chain | Ana LLM cevabı alındı.
+2025-11-19 10:31:13 | DEBUG | rag_chain | EN → TR çeviri tamamlandı.
+2025-11-19 10:31:14 | DEBUG | rag_chain | Kapanış önerisi üretildi.
+2025-11-19 10:31:14 | INFO | __main__ | Streamlit: cevap üretildi. mode=pdf_strong, confidence=0.601, source_count=3, source_docs=2
+2025-11-19 10:33:28 | INFO | __main__ | Streamlit: yeni soru alındı.
+2025-11-19 10:33:28 | DEBUG | rag_chain | Allowed_sources: ["2019 - Grabb and Smith's Plastic Surgery 8th Edition.pdf"]
+2025-11-19 10:33:28 | DEBUG | rag_chain | Soru Türkçe algılandı, İngilizceye çevriliyor...
+2025-11-19 10:33:29 | DEBUG | rag_chain | TR → EN çeviri tamamlandı.
+2025-11-19 10:33:29 | DEBUG | rag_chain | RAG için kullanılacak soru (EN): What is the effect of the density of elastin fibers within elastic cartilage on the durability of grafts used in ear reconstruction?
+2025-11-19 10:33:29 | DEBUG | rag_chain | FAISS'ten 5 doküman döndü. Max skor (confidence): 0.507
+2025-11-19 10:33:29 | DEBUG | rag_chain | Reranker: İlk FAISS sonuç sayısı: 5
+2025-11-19 10:33:29 | DEBUG | rag_chain |   1. skor=-4.084 (page=292)
+2025-11-19 10:33:29 | DEBUG | rag_chain |   2. skor=-4.831 (page=280)
+2025-11-19 10:33:29 | DEBUG | rag_chain |   3. skor=-5.801 (page=339)
+2025-11-19 10:33:29 | DEBUG | rag_chain | allowed_sources filtresi uygulandı. Önce: 3 doküman, sonra: 1 doküman.
+2025-11-19 10:33:29 | DEBUG | rag_chain | Reranker sonrası kullanılan doküman sayısı: 1
+2025-11-19 10:33:29 | DEBUG | rag_chain | Kaynak sayfalar (0-based index): [339]
+2025-11-19 10:33:29 | DEBUG | rag_chain | RAG çalışma modu: pdf_strong, confidence: 0.507
+2025-11-19 10:33:29 | DEBUG | rag_chain | Kaynak doküman sayısı: 1
+2025-11-19 10:33:30 | DEBUG | rag_chain | Ana LLM cevabı alındı.
+2025-11-19 10:33:30 | DEBUG | rag_chain | EN → TR çeviri tamamlandı.
+2025-11-19 10:33:30 | DEBUG | rag_chain | Kapanış önerisi üretildi.
+2025-11-19 10:33:30 | INFO | __main__ | Streamlit: cevap üretildi. mode=pdf_strong, confidence=0.507, source_count=1, source_docs=1
+2025-11-19 10:34:00 | INFO | __main__ | Streamlit: yeni soru alındı.
+2025-11-19 10:34:00 | DEBUG | rag_chain | Allowed_sources: ["2019 - Grabb and Smith's Plastic Surgery 8th Edition.pdf", 'Textbook-of-Plastic-and-Reconstructive-Surgery.pdf']
+2025-11-19 10:34:00 | DEBUG | rag_chain | Soru Türkçe algılandı, İngilizceye çevriliyor...
+2025-11-19 10:34:01 | DEBUG | rag_chain | TR → EN çeviri tamamlandı.
+2025-11-19 10:34:01 | DEBUG | rag_chain | RAG için kullanılacak soru (EN): What is the effect of the density of elastin fibers within elastic cartilage on the durability of grafts used in ear reconstruction?
+2025-11-19 10:34:01 | DEBUG | rag_chain | FAISS'ten 5 doküman döndü. Max skor (confidence): 0.507
+2025-11-19 10:34:01 | DEBUG | rag_chain | Reranker: İlk FAISS sonuç sayısı: 5
+2025-11-19 10:34:01 | DEBUG | rag_chain |   1. skor=-4.084 (page=292)
+2025-11-19 10:34:01 | DEBUG | rag_chain |   2. skor=-4.831 (page=280)
+2025-11-19 10:34:01 | DEBUG | rag_chain |   3. skor=-5.801 (page=339)
+2025-11-19 10:34:01 | DEBUG | rag_chain | allowed_sources filtresi uygulandı. Önce: 3 doküman, sonra: 3 doküman.
+2025-11-19 10:34:01 | DEBUG | rag_chain | Reranker sonrası kullanılan doküman sayısı: 3
+2025-11-19 10:34:01 | DEBUG | rag_chain | Kaynak sayfalar (0-based index): [280, 292, 339]
+2025-11-19 10:34:01 | DEBUG | rag_chain | RAG çalışma modu: pdf_strong, confidence: 0.507
+2025-11-19 10:34:01 | DEBUG | rag_chain | Kaynak doküman sayısı: 2
+2025-11-19 10:34:01 | DEBUG | rag_chain | Ana LLM cevabı alındı.
+2025-11-19 10:34:02 | DEBUG | rag_chain | EN → TR çeviri tamamlandı.
+2025-11-19 10:34:02 | DEBUG | rag_chain | Kapanış önerisi üretildi.
+2025-11-19 10:34:02 | INFO | __main__ | Streamlit: cevap üretildi. mode=pdf_strong, confidence=0.507, source_count=3, source_docs=2
+2025-11-19 10:34:14 | INFO | __main__ | Streamlit: yeni soru alındı.
+2025-11-19 10:34:14 | DEBUG | rag_chain | Allowed_sources: ["2019 - Grabb and Smith's Plastic Surgery 8th Edition.pdf", 'Textbook-of-Plastic-and-Reconstructive-Surgery.pdf']
+2025-11-19 10:34:14 | DEBUG | rag_chain | Soru Türkçe algılandı, İngilizceye çevriliyor...
+2025-11-19 10:34:15 | DEBUG | rag_chain | TR → EN çeviri tamamlandı.
+2025-11-19 10:34:15 | DEBUG | rag_chain | RAG için kullanılacak soru (EN): What is the effect of the density of elastin fibers within elastic cartilage on the durability of grafts used in ear reconstruction?
+2025-11-19 10:34:15 | DEBUG | rag_chain | FAISS'ten 5 doküman döndü. Max skor (confidence): 0.507
+2025-11-19 10:34:15 | DEBUG | rag_chain | Reranker: İlk FAISS sonuç sayısı: 5
+2025-11-19 10:34:15 | DEBUG | rag_chain |   1. skor=-4.084 (page=292)
+2025-11-19 10:34:15 | DEBUG | rag_chain |   2. skor=-4.831 (page=280)
+2025-11-19 10:34:15 | DEBUG | rag_chain |   3. skor=-5.801 (page=339)
+2025-11-19 10:34:15 | DEBUG | rag_chain | allowed_sources filtresi uygulandı. Önce: 3 doküman, sonra: 3 doküman.
+2025-11-19 10:34:15 | DEBUG | rag_chain | Reranker sonrası kullanılan doküman sayısı: 3
+2025-11-19 10:34:15 | DEBUG | rag_chain | Kaynak sayfalar (0-based index): [280, 292, 339]
+2025-11-19 10:34:15 | DEBUG | rag_chain | RAG çalışma modu: pdf_strong, confidence: 0.507
+2025-11-19 10:34:15 | DEBUG | rag_chain | Kaynak doküman sayısı: 2
+2025-11-19 10:34:15 | DEBUG | rag_chain | Ana LLM cevabı alındı.
+2025-11-19 10:34:16 | DEBUG | rag_chain | EN → TR çeviri tamamlandı.
+2025-11-19 10:34:16 | DEBUG | rag_chain | Kapanış önerisi üretildi.
+2025-11-19 10:34:16 | INFO | __main__ | Streamlit: cevap üretildi. mode=pdf_strong, confidence=0.507, source_count=3, source_docs=2
+2025-11-19 10:34:46 | INFO | __main__ | Streamlit: yeni soru alındı.
+2025-11-19 10:34:46 | DEBUG | rag_chain | Allowed_sources: ["2019 - Grabb and Smith's Plastic Surgery 8th Edition.pdf", 'Textbook-of-Plastic-and-Reconstructive-Surgery.pdf']
+2025-11-19 10:34:46 | DEBUG | rag_chain | Soru Türkçe algılandı, İngilizceye çevriliyor...
+2025-11-19 10:34:47 | DEBUG | rag_chain | TR → EN çeviri tamamlandı.
+2025-11-19 10:34:47 | DEBUG | rag_chain | RAG için kullanılacak soru (EN): What are the histological characteristics of the elastic cartilage structure of the external ear (auricle), and how does this structure contribute to the mechanical functions of the ear (shape preservation, flexibility, etc.)?
+2025-11-19 10:34:47 | DEBUG | rag_chain | FAISS'ten 5 doküman döndü. Max skor (confidence): 0.601
+2025-11-19 10:34:47 | DEBUG | rag_chain | Reranker: İlk FAISS sonuç sayısı: 5
+2025-11-19 10:34:47 | DEBUG | rag_chain |   1. skor=2.326 (page=280)
+2025-11-19 10:34:47 | DEBUG | rag_chain |   2. skor=0.314 (page=279)
+2025-11-19 10:34:47 | DEBUG | rag_chain |   3. skor=-3.057 (page=334)
+2025-11-19 10:34:47 | DEBUG | rag_chain | allowed_sources filtresi uygulandı. Önce: 3 doküman, sonra: 3 doküman.
+2025-11-19 10:34:47 | DEBUG | rag_chain | Reranker sonrası kullanılan doküman sayısı: 3
+2025-11-19 10:34:47 | DEBUG | rag_chain | Kaynak sayfalar (0-based index): [279, 280, 334]
+2025-11-19 10:34:47 | DEBUG | rag_chain | RAG çalışma modu: pdf_strong, confidence: 0.601
+2025-11-19 10:34:47 | DEBUG | rag_chain | Kaynak doküman sayısı: 2
+2025-11-19 10:34:48 | DEBUG | rag_chain | Ana LLM cevabı alındı.
+2025-11-19 10:34:49 | DEBUG | rag_chain | EN → TR çeviri tamamlandı.
+2025-11-19 10:34:49 | DEBUG | rag_chain | Kapanış önerisi üretildi.
+2025-11-19 10:34:49 | INFO | __main__ | Streamlit: cevap üretildi. mode=pdf_strong, confidence=0.601, source_count=3, source_docs=2
+2025-11-19 10:34:57 | INFO | __main__ | Streamlit: yeni soru alındı.
+2025-11-19 10:34:57 | DEBUG | rag_chain | Allowed_sources: ['Textbook-of-Plastic-and-Reconstructive-Surgery.pdf']
+2025-11-19 10:34:57 | DEBUG | rag_chain | Soru Türkçe algılandı, İngilizceye çevriliyor...
+2025-11-19 10:34:57 | DEBUG | rag_chain | TR → EN çeviri tamamlandı.
+2025-11-19 10:34:57 | DEBUG | rag_chain | RAG için kullanılacak soru (EN): What are the histological characteristics of the elastic cartilage structure of the external ear (auricle), and how does this structure contribute to the mechanical functions of the ear (shape preservation, flexibility, etc.)?
+2025-11-19 10:34:57 | DEBUG | rag_chain | FAISS'ten 5 doküman döndü. Max skor (confidence): 0.601
+2025-11-19 10:34:57 | DEBUG | rag_chain | Reranker: İlk FAISS sonuç sayısı: 5
+2025-11-19 10:34:57 | DEBUG | rag_chain |   1. skor=2.326 (page=280)
+2025-11-19 10:34:57 | DEBUG | rag_chain |   2. skor=0.314 (page=279)
+2025-11-19 10:34:57 | DEBUG | rag_chain |   3. skor=-3.057 (page=334)
+2025-11-19 10:34:57 | DEBUG | rag_chain | allowed_sources filtresi uygulandı. Önce: 3 doküman, sonra: 2 doküman.
+2025-11-19 10:34:57 | DEBUG | rag_chain | Reranker sonrası kullanılan doküman sayısı: 2
+2025-11-19 10:34:57 | DEBUG | rag_chain | Kaynak sayfalar (0-based index): [279, 280]
+2025-11-19 10:34:57 | DEBUG | rag_chain | RAG çalışma modu: pdf_strong, confidence: 0.601
+2025-11-19 10:34:57 | DEBUG | rag_chain | Kaynak doküman sayısı: 1
+2025-11-19 10:34:58 | DEBUG | rag_chain | Ana LLM cevabı alındı.
+2025-11-19 10:34:59 | DEBUG | rag_chain | EN → TR çeviri tamamlandı.
+2025-11-19 10:35:00 | DEBUG | rag_chain | Kapanış önerisi üretildi.
+2025-11-19 10:35:00 | INFO | __main__ | Streamlit: cevap üretildi. mode=pdf_strong, confidence=0.601, source_count=2, source_docs=1
+2025-11-19 10:35:14 | INFO | __main__ | Streamlit: yeni soru alındı.
+2025-11-19 10:35:14 | DEBUG | rag_chain | Allowed_sources: ["2019 - Grabb and Smith's Plastic Surgery 8th Edition.pdf"]
+2025-11-19 10:35:14 | DEBUG | rag_chain | Soru Türkçe algılandı, İngilizceye çevriliyor...
+2025-11-19 10:35:14 | DEBUG | rag_chain | TR → EN çeviri tamamlandı.
+2025-11-19 10:35:14 | DEBUG | rag_chain | RAG için kullanılacak soru (EN): What are the histological characteristics of the elastic cartilage structure of the external ear (auricle), and how does this structure contribute to the mechanical functions of the ear (shape preservation, flexibility, etc.)?
+2025-11-19 10:35:14 | DEBUG | rag_chain | FAISS'ten 5 doküman döndü. Max skor (confidence): 0.601
+2025-11-19 10:35:14 | DEBUG | rag_chain | Reranker: İlk FAISS sonuç sayısı: 5
+2025-11-19 10:35:14 | DEBUG | rag_chain |   1. skor=2.326 (page=280)
+2025-11-19 10:35:14 | DEBUG | rag_chain |   2. skor=0.314 (page=279)
+2025-11-19 10:35:14 | DEBUG | rag_chain |   3. skor=-3.057 (page=334)
+2025-11-19 10:35:14 | DEBUG | rag_chain | allowed_sources filtresi uygulandı. Önce: 3 doküman, sonra: 1 doküman.
+2025-11-19 10:35:14 | DEBUG | rag_chain | Reranker sonrası kullanılan doküman sayısı: 1
+2025-11-19 10:35:14 | DEBUG | rag_chain | Kaynak sayfalar (0-based index): [334]
+2025-11-19 10:35:14 | DEBUG | rag_chain | RAG çalışma modu: pdf_strong, confidence: 0.601
+2025-11-19 10:35:14 | DEBUG | rag_chain | Kaynak doküman sayısı: 1
+2025-11-19 10:35:16 | DEBUG | rag_chain | Ana LLM cevabı alındı.
+2025-11-19 10:35:16 | DEBUG | rag_chain | EN → TR çeviri tamamlandı.
+2025-11-19 10:35:16 | DEBUG | rag_chain | Kapanış önerisi üretildi.
+2025-11-19 10:35:16 | INFO | __main__ | Streamlit: cevap üretildi. mode=pdf_strong, confidence=0.601, source_count=1, source_docs=1
+2025-11-19 14:53:03 | INFO | __main__ | Yeni PDF yüklendi ve kaydedildi: uploaded_pdfs\Textbook-of-Plastic-and-Reconstructive-Surgery.pdf
+2025-11-19 14:54:07 | INFO | __main__ | Yeni PDF yüklendi ve kaydedildi: uploaded_pdfs\Textbook-of-Plastic-and-Reconstructive-Surgery.pdf
+2025-11-19 14:56:53 | INFO | data_processor | [Veri] PDF yükleniyor: uploaded_pdfs\Textbook-of-Plastic-and-Reconstructive-Surgery.pdf
+2025-11-19 14:56:53 | INFO | data_processor | [Veri] PDF yükleniyor: uploaded_pdfs\Textbook-of-Plastic-and-Reconstructive-Surgery.pdf
+2025-11-19 14:59:36 | INFO | __main__ | Yeni PDF yüklendi ve kaydedildi: uploaded_pdfs\Textbook-of-Plastic-and-Reconstructive-Surgery.pdf
+2025-11-19 14:59:36 | INFO | data_processor | [Veri] PDF yükleniyor: uploaded_pdfs\Textbook-of-Plastic-and-Reconstructive-Surgery.pdf
+2025-11-19 14:59:46 | INFO | data_processor | [Veri] Toplam 491 sayfa yüklendi.
+2025-11-19 14:59:46 | INFO | data_processor | [Veri] Parçalama sonrası toplam 971 adet doküman parçası oluşturuldu.
+2025-11-19 14:59:46 | INFO | data_processor | [İndeks] Yeni FAISS indeksi oluşturuluyor (faiss_index_saglik)...
+2025-11-19 15:00:07 | INFO | data_processor | [İndeks] İndeks diske kaydedildi: faiss_index_saglik
+2025-11-19 15:00:07 | INFO | data_processor | [İndeks] İndeksleme süresi: 21.10 saniye
+2025-11-19 15:00:07 | INFO | rag_chain | RAG zinciri kuruluyor (Model: meta-llama/llama-4-scout-17b-16e-instruct)...
+2025-11-19 15:00:09 | INFO | rag_chain | Reranker CrossEncoder modeli yükleniyor: cross-encoder/ms-marco-MiniLM-L-6-v2
+2025-11-19 15:00:11 | DEBUG | rag_chain | Türkçe çeviri pipeline aktif. Model: llama-3.1-8b-instant
+2025-11-19 15:00:11 | INFO | rag_chain | RAG zinciri başarıyla kuruldu (TR/EN, 3-seviyeli confidence, reranker + sohbet kapanışlı).
+2025-11-19 15:00:11 | INFO | __main__ | Yeni dokümanlar indekse eklendi. Toplam yeni parça: 971, available_sources: ['Textbook-of-Plastic-and-Reconstructive-Surgery.pdf']
+2025-11-19 15:00:36 | INFO | __main__ | Streamlit: yeni soru alındı.
+2025-11-19 15:00:36 | DEBUG | rag_chain | Allowed_sources: ['Textbook-of-Plastic-and-Reconstructive-Surgery.pdf']
+2025-11-19 15:00:36 | DEBUG | rag_chain | Soru Türkçe algılandı, İngilizceye çevriliyor...
+2025-11-19 15:00:36 | DEBUG | rag_chain | TR → EN çeviri tamamlandı.
+2025-11-19 15:00:36 | DEBUG | rag_chain | RAG için kullanılacak soru (EN): What is microvascular reconstruction?
+2025-11-19 15:00:36 | DEBUG | rag_chain | FAISS'ten 5 doküman döndü. Max skor (confidence): 0.342
+2025-11-19 15:00:37 | DEBUG | rag_chain | Reranker: İlk FAISS sonuç sayısı: 5
+2025-11-19 15:00:37 | DEBUG | rag_chain |   1. skor=4.242 (page=235)
+2025-11-19 15:00:37 | DEBUG | rag_chain |   2. skor=2.868 (page=235)
+2025-11-19 15:00:37 | DEBUG | rag_chain |   3. skor=-1.669 (page=283)
+2025-11-19 15:00:37 | DEBUG | rag_chain | allowed_sources filtresi uygulandı. Önce: 3 doküman, sonra: 3 doküman.
+2025-11-19 15:00:37 | DEBUG | rag_chain | Reranker sonrası kullanılan doküman sayısı: 3
+2025-11-19 15:00:37 | DEBUG | rag_chain | Kaynak sayfalar (0-based index): [235, 283]
+2025-11-19 15:00:37 | DEBUG | rag_chain | RAG çalışma modu: hybrid, confidence: 0.342
+2025-11-19 15:00:37 | DEBUG | rag_chain | Kaynak doküman sayısı: 1
+2025-11-19 15:00:38 | DEBUG | rag_chain | Ana LLM cevabı alındı.
+2025-11-19 15:00:39 | DEBUG | rag_chain | EN → TR çeviri tamamlandı.
+2025-11-19 15:00:39 | DEBUG | rag_chain | Kapanış önerisi üretildi.
+2025-11-19 15:00:39 | INFO | __main__ | Streamlit: cevap üretildi. mode=hybrid, confidence=0.342, source_count=3, source_docs=1
+2025-11-19 15:01:14 | INFO | __main__ | Streamlit: yeni soru alındı.
+2025-11-19 15:01:14 | DEBUG | rag_chain | Allowed_sources: ['Textbook-of-Plastic-and-Reconstructive-Surgery.pdf']
+2025-11-19 15:01:14 | DEBUG | rag_chain | Soru Türkçe algılandı, İngilizceye çevriliyor...
+2025-11-19 15:01:15 | DEBUG | rag_chain | TR → EN çeviri tamamlandı.
+2025-11-19 15:01:15 | DEBUG | rag_chain | RAG için kullanılacak soru (EN): What is microvascular reconstruction? 
+
+Microvascular reconstruction refers to a surgical technique that involves reconnecting small blood vessels, typically under a microscope, to restore blood flow to a damaged or resected tissue or organ. This complex procedure requires great skill and precision to ensure successful revascularization and minimize the risk of complications.
+2025-11-19 15:01:15 | DEBUG | rag_chain | FAISS'ten 5 doküman döndü. Max skor (confidence): 0.323
+2025-11-19 15:01:15 | DEBUG | rag_chain | Reranker: İlk FAISS sonuç sayısı: 5
+2025-11-19 15:01:15 | DEBUG | rag_chain |   1. skor=2.875 (page=235)
+2025-11-19 15:01:15 | DEBUG | rag_chain |   2. skor=1.916 (page=235)
+2025-11-19 15:01:15 | DEBUG | rag_chain |   3. skor=-1.052 (page=283)
+2025-11-19 15:01:15 | DEBUG | rag_chain | allowed_sources filtresi uygulandı. Önce: 3 doküman, sonra: 3 doküman.
+2025-11-19 15:01:15 | DEBUG | rag_chain | Reranker sonrası kullanılan doküman sayısı: 3
+2025-11-19 15:01:15 | DEBUG | rag_chain | Kaynak sayfalar (0-based index): [235, 283]
+2025-11-19 15:01:15 | DEBUG | rag_chain | RAG çalışma modu: hybrid, confidence: 0.323
+2025-11-19 15:01:15 | DEBUG | rag_chain | Kaynak doküman sayısı: 1
+2025-11-19 15:01:16 | DEBUG | rag_chain | Ana LLM cevabı alındı.
+2025-11-19 15:01:17 | DEBUG | rag_chain | EN → TR çeviri tamamlandı.
+2025-11-19 15:01:17 | DEBUG | rag_chain | Kapanış önerisi üretildi.
+2025-11-19 15:01:17 | INFO | __main__ | Streamlit: cevap üretildi. mode=hybrid, confidence=0.323, source_count=3, source_docs=1
+2025-11-19 15:01:41 | INFO | __main__ | Streamlit: yeni soru alındı.
+2025-11-19 15:01:41 | DEBUG | rag_chain | Allowed_sources: ['Textbook-of-Plastic-and-Reconstructive-Surgery.pdf']
+2025-11-19 15:01:41 | DEBUG | rag_chain | Soru Türkçe algılandı, İngilizceye çevriliyor...
+2025-11-19 15:01:42 | DEBUG | rag_chain | TR → EN çeviri tamamlandı.
+2025-11-19 15:01:42 | DEBUG | rag_chain | RAG için kullanılacak soru (EN): What is microvascular reconstruction? 
+
+Microvascular reconstruction refers to a surgical technique that involves reconnecting small blood vessels, typically under an operating microscope, to restore blood flow to a reattached or transplanted tissue. This procedure is often used in reconstructive surgery to salvage damaged or amputated limbs, as well as to transfer tissue from one part of the body to another.
+2025-11-19 15:01:42 | DEBUG | rag_chain | FAISS'ten 5 doküman döndü. Max skor (confidence): 0.355
+2025-11-19 15:01:42 | DEBUG | rag_chain | Reranker: İlk FAISS sonuç sayısı: 5
+2025-11-19 15:01:42 | DEBUG | rag_chain |   1. skor=2.623 (page=235)
+2025-11-19 15:01:42 | DEBUG | rag_chain |   2. skor=2.386 (page=235)
+2025-11-19 15:01:42 | DEBUG | rag_chain |   3. skor=-0.919 (page=283)
+2025-11-19 15:01:42 | DEBUG | rag_chain | allowed_sources filtresi uygulandı. Önce: 3 doküman, sonra: 3 doküman.
+2025-11-19 15:01:42 | DEBUG | rag_chain | Reranker sonrası kullanılan doküman sayısı: 3
+2025-11-19 15:01:42 | DEBUG | rag_chain | Kaynak sayfalar (0-based index): [235, 283]
+2025-11-19 15:01:42 | DEBUG | rag_chain | RAG çalışma modu: hybrid, confidence: 0.355
+2025-11-19 15:01:42 | DEBUG | rag_chain | Kaynak doküman sayısı: 1
+2025-11-19 15:01:43 | DEBUG | rag_chain | Ana LLM cevabı alındı.
+2025-11-19 15:01:44 | DEBUG | rag_chain | EN → TR çeviri tamamlandı.
+2025-11-19 15:01:45 | DEBUG | rag_chain | Kapanış önerisi üretildi.
+2025-11-19 15:01:45 | INFO | __main__ | Streamlit: cevap üretildi. mode=hybrid, confidence=0.355, source_count=3, source_docs=1
+2025-11-19 15:01:58 | INFO | __main__ | Streamlit: yeni soru alındı.
+2025-11-19 15:01:58 | DEBUG | rag_chain | Allowed_sources: ['Textbook-of-Plastic-and-Reconstructive-Surgery.pdf']
+2025-11-19 15:01:58 | DEBUG | rag_chain | Soru Türkçe algılandı, İngilizceye çevriliyor...
+2025-11-19 15:01:58 | DEBUG | rag_chain | TR → EN çeviri tamamlandı.
+2025-11-19 15:01:58 | DEBUG | rag_chain | RAG için kullanılacak soru (EN): What is microvascular reconstruction and can you provide a brief explanation?
+2025-11-19 15:01:58 | DEBUG | rag_chain | FAISS'ten 5 doküman döndü. Max skor (confidence): 0.325
+2025-11-19 15:01:58 | DEBUG | rag_chain | Reranker: İlk FAISS sonuç sayısı: 5
+2025-11-19 15:01:58 | DEBUG | rag_chain |   1. skor=0.795 (page=235)
+2025-11-19 15:01:58 | DEBUG | rag_chain |   2. skor=-0.845 (page=235)
+2025-11-19 15:01:58 | DEBUG | rag_chain |   3. skor=-7.254 (page=171)
+2025-11-19 15:01:58 | DEBUG | rag_chain | allowed_sources filtresi uygulandı. Önce: 3 doküman, sonra: 3 doküman.
+2025-11-19 15:01:58 | DEBUG | rag_chain | Reranker sonrası kullanılan doküman sayısı: 3
+2025-11-19 15:01:58 | DEBUG | rag_chain | Kaynak sayfalar (0-based index): [171, 235]
+2025-11-19 15:01:58 | DEBUG | rag_chain | RAG çalışma modu: hybrid, confidence: 0.325
+2025-11-19 15:01:58 | DEBUG | rag_chain | Kaynak doküman sayısı: 1
+2025-11-19 15:01:59 | DEBUG | rag_chain | Ana LLM cevabı alındı.
+2025-11-19 15:02:00 | DEBUG | rag_chain | EN → TR çeviri tamamlandı.
+2025-11-19 15:02:01 | DEBUG | rag_chain | Kapanış önerisi üretildi.
+2025-11-19 15:02:01 | INFO | __main__ | Streamlit: cevap üretildi. mode=hybrid, confidence=0.325, source_count=3, source_docs=1
+2025-11-19 15:10:46 | INFO | __main__ | Streamlit: yeni soru alındı.
+2025-11-19 15:10:46 | DEBUG | rag_chain | Allowed_sources: ['Textbook-of-Plastic-and-Reconstructive-Surgery.pdf']
+2025-11-19 15:10:46 | DEBUG | rag_chain | Soru Türkçe algılandı, İngilizceye çevriliyor...
+2025-11-19 15:10:47 | DEBUG | rag_chain | TR → EN çeviri tamamlandı.
+2025-11-19 15:10:47 | DEBUG | rag_chain | RAG için kullanılacak soru (EN): What are the fundamental anatomical differences between camptodactyly and clinodactyly, and how are the indications for surgical intervention determined in terms of treatment approach based on these differences?
+2025-11-19 15:10:47 | DEBUG | rag_chain | FAISS'ten 5 doküman döndü. Max skor (confidence): 0.434
+2025-11-19 15:10:47 | DEBUG | rag_chain | Reranker: İlk FAISS sonuç sayısı: 5
+2025-11-19 15:10:47 | DEBUG | rag_chain |   1. skor=-1.298 (page=270)
+2025-11-19 15:10:47 | DEBUG | rag_chain |   2. skor=-2.267 (page=270)
+2025-11-19 15:10:47 | DEBUG | rag_chain |   3. skor=-2.738 (page=262)
+2025-11-19 15:10:47 | DEBUG | rag_chain | allowed_sources filtresi uygulandı. Önce: 3 doküman, sonra: 3 doküman.
+2025-11-19 15:10:47 | DEBUG | rag_chain | Reranker sonrası kullanılan doküman sayısı: 3
+2025-11-19 15:10:47 | DEBUG | rag_chain | Kaynak sayfalar (0-based index): [262, 270]
+2025-11-19 15:10:47 | DEBUG | rag_chain | RAG çalışma modu: hybrid, confidence: 0.434
+2025-11-19 15:10:47 | DEBUG | rag_chain | Kaynak doküman sayısı: 1
+2025-11-19 15:10:49 | DEBUG | rag_chain | Ana LLM cevabı alındı.
+2025-11-19 15:10:51 | DEBUG | rag_chain | EN → TR çeviri tamamlandı.
+2025-11-19 15:10:51 | DEBUG | rag_chain | Kapanış önerisi üretildi.
+2025-11-19 15:10:51 | INFO | __main__ | Streamlit: cevap üretildi. mode=hybrid, confidence=0.434, source_count=3, source_docs=1
+2025-11-19 15:17:30 | INFO | __main__ | Yeni PDF yüklendi ve kaydedildi: uploaded_pdfs\Textbook-of-Plastic-and-Reconstructive-Surgery.pdf
+2025-11-19 15:17:30 | INFO | data_processor | [Veri] PDF yükleniyor: uploaded_pdfs\Textbook-of-Plastic-and-Reconstructive-Surgery.pdf
+2025-11-19 15:17:40 | INFO | data_processor | [Veri] Toplam 491 sayfa yüklendi.
+2025-11-19 15:17:40 | INFO | data_processor | [Veri] Parçalama sonrası toplam 971 adet doküman parçası oluşturuldu.
+2025-11-19 15:17:40 | INFO | data_processor | [İndeks] Yeni FAISS indeksi oluşturuluyor (faiss_index_saglik)...
+2025-11-19 15:18:00 | INFO | data_processor | [İndeks] İndeks diske kaydedildi: faiss_index_saglik
+2025-11-19 15:18:00 | INFO | data_processor | [İndeks] İndeksleme süresi: 19.77 saniye
+2025-11-19 15:18:00 | INFO | rag_chain | RAG zinciri kuruluyor (Model: meta-llama/llama-4-scout-17b-16e-instruct)...
+2025-11-19 15:18:01 | INFO | rag_chain | Reranker CrossEncoder modeli yükleniyor: cross-encoder/ms-marco-MiniLM-L-6-v2
+2025-11-19 15:18:03 | DEBUG | rag_chain | Türkçe çeviri pipeline aktif. Model: llama-3.1-8b-instant
+2025-11-19 15:18:03 | INFO | rag_chain | RAG zinciri başarıyla kuruldu (TR/EN, 3-seviyeli confidence, reranker + sohbet kapanışlı).
+2025-11-19 15:18:03 | INFO | __main__ | Yeni dokümanlar indekse eklendi. Toplam yeni parça: 971, available_sources: ['Textbook-of-Plastic-and-Reconstructive-Surgery.pdf']
+2025-11-19 15:19:38 | INFO | __main__ | Streamlit: yeni soru alındı.
+2025-11-19 15:19:38 | DEBUG | rag_chain | Allowed_sources: ['Textbook-of-Plastic-and-Reconstructive-Surgery.pdf']
+2025-11-19 15:19:38 | DEBUG | rag_chain | Soru Türkçe algılandı, İngilizceye çevriliyor...
+2025-11-19 15:19:39 | DEBUG | rag_chain | TR → EN çeviri tamamlandı.
+2025-11-19 15:19:39 | DEBUG | rag_chain | RAG için kullanılacak soru (EN): What are the fundamental anatomical differences between camptodactyly and clinodactyly, and how are the indications for surgical intervention determined in terms of treatment approach based on these differences?
+2025-11-19 15:19:39 | DEBUG | rag_chain | FAISS'ten 5 doküman döndü. Max skor (confidence): 0.434
+2025-11-19 15:19:39 | DEBUG | rag_chain | Reranker: İlk FAISS sonuç sayısı: 5
+2025-11-19 15:19:39 | DEBUG | rag_chain |   1. skor=-1.298 (page=270)
+2025-11-19 15:19:39 | DEBUG | rag_chain |   2. skor=-2.267 (page=270)
+2025-11-19 15:19:39 | DEBUG | rag_chain |   3. skor=-2.738 (page=262)
+2025-11-19 15:19:39 | DEBUG | rag_chain | allowed_sources filtresi uygulandı. Önce: 3 doküman, sonra: 3 doküman.
+2025-11-19 15:19:39 | DEBUG | rag_chain | Reranker sonrası kullanılan doküman sayısı: 3
+2025-11-19 15:19:39 | DEBUG | rag_chain | Kaynak sayfalar (0-based index): [262, 270]
+2025-11-19 15:19:39 | DEBUG | rag_chain | RAG çalışma modu: hybrid, confidence: 0.434
+2025-11-19 15:19:39 | DEBUG | rag_chain | Kaynak doküman sayısı: 1
+2025-11-19 15:19:41 | DEBUG | rag_chain | Ana LLM cevabı alındı.
+2025-11-19 15:19:43 | DEBUG | rag_chain | EN → TR çeviri tamamlandı.
+2025-11-19 15:19:43 | DEBUG | rag_chain | Kapanış önerisi üretildi.
+2025-11-19 15:19:43 | INFO | __main__ | Streamlit: cevap üretildi. mode=hybrid, confidence=0.434, source_count=3, source_docs=1
+2025-11-19 15:20:18 | INFO | __main__ | Yeni PDF yüklendi ve kaydedildi: uploaded_pdfs\Textbook-of-Plastic-and-Reconstructive-Surgery.pdf
+2025-11-19 15:20:18 | INFO | data_processor | [Veri] PDF yükleniyor: uploaded_pdfs\Textbook-of-Plastic-and-Reconstructive-Surgery.pdf
+2025-11-19 15:20:29 | INFO | data_processor | [Veri] Toplam 491 sayfa yüklendi.
+2025-11-19 15:20:29 | INFO | data_processor | [Veri] Parçalama sonrası toplam 971 adet doküman parçası oluşturuldu.
+2025-11-19 15:20:29 | INFO | __main__ | Yeni PDF yüklendi ve kaydedildi: uploaded_pdfs\2019 - Grabb and Smith's Plastic Surgery 8th Edition.pdf
+2025-11-19 15:20:29 | INFO | data_processor | [Veri] PDF yükleniyor: uploaded_pdfs\2019 - Grabb and Smith's Plastic Surgery 8th Edition.pdf
+2025-11-19 15:21:03 | INFO | data_processor | [Veri] Toplam 1076 sayfa yüklendi.
+2025-11-19 15:21:03 | INFO | data_processor | [Veri] Parçalama sonrası toplam 4594 adet doküman parçası oluşturuldu.
+2025-11-19 15:21:03 | INFO | data_processor | extend_vector_store: Mevcut FAISS indeksine 5565 yeni doküman parçası ekleniyor.
+2025-11-19 15:24:18 | INFO | data_processor | extend_vector_store: Güncellenmiş FAISS indeksi diske kaydedildi (faiss_index_saglik).
+2025-11-19 15:24:18 | INFO | rag_chain | RAG zinciri kuruluyor (Model: meta-llama/llama-4-scout-17b-16e-instruct)...
+2025-11-19 15:24:19 | INFO | rag_chain | Reranker CrossEncoder modeli yükleniyor: cross-encoder/ms-marco-MiniLM-L-6-v2
+2025-11-19 15:24:22 | DEBUG | rag_chain | Türkçe çeviri pipeline aktif. Model: llama-3.1-8b-instant
+2025-11-19 15:24:22 | INFO | rag_chain | RAG zinciri başarıyla kuruldu (TR/EN, 3-seviyeli confidence, reranker + sohbet kapanışlı).
+2025-11-19 15:24:22 | INFO | __main__ | Yeni dokümanlar indekse eklendi. Toplam yeni parça: 5565, available_sources: ['Textbook-of-Plastic-and-Reconstructive-Surgery.pdf', "2019 - Grabb and Smith's Plastic Surgery 8th Edition.pdf"]
+2025-11-19 15:24:42 | INFO | __main__ | Streamlit: yeni soru alındı.
+2025-11-19 15:24:42 | DEBUG | rag_chain | Allowed_sources: ['Textbook-of-Plastic-and-Reconstructive-Surgery.pdf', "2019 - Grabb and Smith's Plastic Surgery 8th Edition.pdf"]
+2025-11-19 15:24:42 | DEBUG | rag_chain | Soru Türkçe algılandı, İngilizceye çevriliyor...
+2025-11-19 15:24:42 | DEBUG | rag_chain | TR → EN çeviri tamamlandı.
+2025-11-19 15:24:42 | DEBUG | rag_chain | RAG için kullanılacak soru (EN): What are the fundamental anatomical differences between camptodactyly and clinodactyly, and how are the indications for surgical intervention determined in terms of treatment approach based on these differences?
+2025-11-19 15:24:42 | DEBUG | rag_chain | FAISS'ten 5 doküman döndü. Max skor (confidence): 0.434
+2025-11-19 15:24:43 | DEBUG | rag_chain | Reranker: İlk FAISS sonuç sayısı: 5
+2025-11-19 15:24:43 | DEBUG | rag_chain |   1. skor=-1.298 (page=270)
+2025-11-19 15:24:43 | DEBUG | rag_chain |   2. skor=-1.298 (page=270)
+2025-11-19 15:24:43 | DEBUG | rag_chain |   3. skor=-1.630 (page=931)
+2025-11-19 15:24:43 | DEBUG | rag_chain | allowed_sources filtresi uygulandı. Önce: 3 doküman, sonra: 3 doküman.
+2025-11-19 15:24:43 | DEBUG | rag_chain | Reranker sonrası kullanılan doküman sayısı: 3
+2025-11-19 15:24:43 | DEBUG | rag_chain | Kaynak sayfalar (0-based index): [270, 931]
+2025-11-19 15:24:43 | DEBUG | rag_chain | RAG çalışma modu: hybrid, confidence: 0.434
+2025-11-19 15:24:43 | DEBUG | rag_chain | Kaynak doküman sayısı: 2
+2025-11-19 15:24:44 | DEBUG | rag_chain | Ana LLM cevabı alındı.
+2025-11-19 15:24:52 | DEBUG | rag_chain | EN → TR çeviri tamamlandı.
+2025-11-19 15:24:52 | DEBUG | rag_chain | Kapanış önerisi üretildi.
+2025-11-19 15:24:52 | INFO | __main__ | Streamlit: cevap üretildi. mode=hybrid, confidence=0.434, source_count=3, source_docs=2
+2025-11-19 15:26:32 | INFO | __main__ | Streamlit: yeni soru alındı.
+2025-11-19 15:26:32 | DEBUG | rag_chain | Allowed_sources: ['Textbook-of-Plastic-and-Reconstructive-Surgery.pdf', "2019 - Grabb and Smith's Plastic Surgery 8th Edition.pdf"]
+2025-11-19 15:26:32 | DEBUG | rag_chain | Soru Türkçe algılandı, İngilizceye çevriliyor...
+2025-11-19 15:26:32 | DEBUG | rag_chain | TR → EN çeviri tamamlandı.
+2025-11-19 15:26:32 | DEBUG | rag_chain | RAG için kullanılacak soru (EN): What are the fundamental anatomical differences between camptodactyly and clinodactyly, and how are the indications for surgical intervention determined in terms of treatment approach based on these differences?
+2025-11-19 15:26:32 | DEBUG | rag_chain | FAISS'ten 5 doküman döndü. Max skor (confidence): 0.434
+2025-11-19 15:26:32 | DEBUG | rag_chain | Reranker: İlk FAISS sonuç sayısı: 5
+2025-11-19 15:26:32 | DEBUG | rag_chain |   1. skor=-1.298 (page=270)
+2025-11-19 15:26:32 | DEBUG | rag_chain |   2. skor=-1.298 (page=270)
+2025-11-19 15:26:32 | DEBUG | rag_chain |   3. skor=-1.630 (page=931)
+2025-11-19 15:26:32 | DEBUG | rag_chain | allowed_sources filtresi uygulandı. Önce: 3 doküman, sonra: 3 doküman.
+2025-11-19 15:26:32 | DEBUG | rag_chain | Reranker sonrası kullanılan doküman sayısı: 3
+2025-11-19 15:26:32 | DEBUG | rag_chain | Kaynak sayfalar (0-based index): [270, 931]
+2025-11-19 15:26:32 | DEBUG | rag_chain | RAG çalışma modu: hybrid, confidence: 0.434
+2025-11-19 15:26:32 | DEBUG | rag_chain | Kaynak doküman sayısı: 2
+2025-11-19 15:26:34 | DEBUG | rag_chain | Ana LLM cevabı alındı.
+2025-11-19 15:26:35 | DEBUG | rag_chain | EN → TR çeviri tamamlandı.
+2025-11-19 15:26:36 | DEBUG | rag_chain | Kapanış önerisi üretildi.
+2025-11-19 15:26:36 | INFO | __main__ | Streamlit: cevap üretildi. mode=hybrid, confidence=0.434, source_count=3, source_docs=2
+2025-11-19 16:47:13 | INFO | __main__ | Yeni PDF yüklendi ve kaydedildi: uploaded_pdfs\Textbook-of-Plastic-and-Reconstructive-Surgery.pdf
+2025-11-19 16:50:16 | INFO | __main__ | Yeni PDF yüklendi ve kaydedildi: uploaded_pdfs\Textbook-of-Plastic-and-Reconstructive-Surgery.pdf
+2025-11-19 16:50:16 | INFO | data_processor | PDF yükleniyor: uploaded_pdfs\Textbook-of-Plastic-and-Reconstructive-Surgery.pdf (source_name=Textbook-of-Plastic-and-Reconstructive-Surgery.pdf)
+2025-11-19 16:50:27 | INFO | data_processor | Toplam 491 sayfa yüklendi.
+2025-11-19 16:50:27 | INFO | data_processor | Parçalama sonrası toplam 971 adet doküman parçası oluşturuldu.
+2025-11-19 16:50:27 | INFO | data_processor | Yerel embedding modeli yükleniyor: all-MiniLM-L6-v2
+2025-11-19 16:50:29 | INFO | data_processor | Yeni FAISS vektör deposu oluşturuluyor (doküman sayısı: 971)...
+2025-11-19 16:50:46 | INFO | data_processor | FAISS vektör deposu başarıyla oluşturuldu.
+2025-11-19 16:50:46 | INFO | __main__ | RAG zinciri yeniden kuruluyor (temperature=0.00, k=5, max_tokens=768)
+2025-11-19 16:56:07 | INFO | __main__ | Yeni PDF yüklendi ve kaydedildi: uploaded_pdfs\Textbook-of-Plastic-and-Reconstructive-Surgery.pdf
+2025-11-19 16:56:07 | INFO | data_processor | PDF yükleniyor: uploaded_pdfs\Textbook-of-Plastic-and-Reconstructive-Surgery.pdf (source_name=Textbook-of-Plastic-and-Reconstructive-Surgery.pdf)
+2025-11-19 16:56:17 | INFO | data_processor | Toplam 491 sayfa yüklendi.
+2025-11-19 16:56:17 | INFO | data_processor | Parçalama sonrası toplam 971 adet doküman parçası oluşturuldu.
+2025-11-19 16:56:17 | INFO | data_processor | Yerel embedding modeli yükleniyor: all-MiniLM-L6-v2
+2025-11-19 16:56:20 | INFO | data_processor | Yeni FAISS vektör deposu oluşturuluyor (doküman sayısı: 971)...
+2025-11-19 16:56:37 | INFO | data_processor | FAISS vektör deposu başarıyla oluşturuldu.
+2025-11-19 16:56:37 | INFO | __main__ | RAG zinciri yeniden kuruluyor (temperature=0.00, k=5, max_tokens=768)
+2025-11-20 14:35:28 | INFO | __main__ | Yeni PDF yüklendi ve kaydedildi: uploaded_pdfs\Textbook-of-Plastic-and-Reconstructive-Surgery.pdf
+2025-11-20 14:35:28 | INFO | data_processor | PDF yükleniyor: uploaded_pdfs\Textbook-of-Plastic-and-Reconstructive-Surgery.pdf (source_name=Textbook-of-Plastic-and-Reconstructive-Surgery.pdf)
+2025-11-20 14:35:41 | INFO | data_processor | Toplam 491 sayfa yüklendi.
+2025-11-20 14:35:41 | INFO | data_processor | Parçalama sonrası toplam 971 adet doküman parçası oluşturuldu.
+2025-11-20 14:35:41 | INFO | data_processor | Yerel embedding modeli yükleniyor: all-MiniLM-L6-v2
+2025-11-20 14:35:44 | INFO | data_processor | Yeni FAISS vektör deposu oluşturuluyor (doküman sayısı: 971)...
+2025-11-20 14:36:21 | INFO | data_processor | FAISS vektör deposu başarıyla oluşturuldu.
+2025-11-20 14:36:21 | INFO | __main__ | RAG zinciri yeniden kuruluyor (temperature=0.00, k=5, max_tokens=768)
+2025-11-20 14:36:21 | INFO | rag_chain | RAG zinciri kuruluyor (Model: meta-llama/llama-4-scout-17b-16e-instruct, temperature=0.00, retriever_k=5, max_tokens=768)...
+2025-11-20 14:36:24 | INFO | rag_chain | Reranker CrossEncoder modeli yükleniyor: cross-encoder/ms-marco-MiniLM-L-6-v2
+2025-11-20 14:36:26 | DEBUG | rag_chain | Türkçe çeviri pipeline aktif. Model: llama-3.1-8b-instant
+2025-11-20 14:36:26 | INFO | rag_chain | RAG zinciri başarıyla kuruldu (TR/EN, 3-seviyeli confidence, reranker + sohbet kapanışlı, temperature=0.00, retriever_k=5, max_tokens=768).
+2025-11-20 14:36:26 | INFO | __main__ | Yeni dokümanlar indekse eklendi. Toplam yeni parça: 971, available_sources: ['Textbook-of-Plastic-and-Reconstructive-Surgery.pdf']
+2025-11-20 14:38:19 | DEBUG | rag_chain | Allowed_sources: ['Textbook-of-Plastic-and-Reconstructive-Surgery.pdf']
+2025-11-20 14:38:19 | DEBUG | rag_chain | Soru Türkçe algılandı, İngilizceye çevriliyor...
+2025-11-20 14:38:20 | DEBUG | rag_chain | TR → EN çeviri tamamlandı.
+2025-11-20 14:38:20 | DEBUG | rag_chain | RAG için kullanılacak soru (EN): What are the fundamental differences between camptodactyly and clinodactyly, and in which cases is surgical intervention necessary?
+2025-11-20 14:38:20 | DEBUG | rag_chain | FAISS'ten 5 doküman döndü. Max skor (confidence): 0.412
+2025-11-20 14:38:20 | DEBUG | rag_chain | Reranker: İlk FAISS sonuç sayısı: 5
+2025-11-20 14:38:20 | DEBUG | rag_chain |   1. skor=-1.751 (page=270)
+2025-11-20 14:38:20 | DEBUG | rag_chain |   2. skor=-3.530 (page=270)
+2025-11-20 14:38:20 | DEBUG | rag_chain |   3. skor=-5.381 (page=480)
+2025-11-20 14:38:20 | DEBUG | rag_chain | allowed_sources filtresi uygulandı. Önce: 3 doküman, sonra: 3 doküman.
+2025-11-20 14:38:20 | DEBUG | rag_chain | Reranker sonrası kullanılan doküman sayısı: 3
+2025-11-20 14:38:20 | DEBUG | rag_chain | Kaynak sayfalar (0-based index): [270, 480]
+2025-11-20 14:38:20 | DEBUG | rag_chain | RAG çalışma modu: hybrid, confidence: 0.412
+2025-11-20 14:38:20 | DEBUG | rag_chain | Kaynak doküman sayısı: 1
+2025-11-20 14:38:21 | DEBUG | rag_chain | Ana LLM cevabı alındı.
+2025-11-20 14:38:23 | DEBUG | rag_chain | EN → TR çeviri tamamlandı.
+2025-11-20 14:38:23 | DEBUG | rag_chain | Kapanış önerisi üretildi.
+2025-11-20 14:38:51 | INFO | __main__ | RAG zinciri yeniden kuruluyor (temperature=0.00, k=5, max_tokens=320)
+2025-11-20 14:38:51 | INFO | rag_chain | RAG zinciri kuruluyor (Model: meta-llama/llama-4-scout-17b-16e-instruct, temperature=0.00, retriever_k=5, max_tokens=320)...
+2025-11-20 14:38:52 | INFO | rag_chain | Reranker CrossEncoder modeli yükleniyor: cross-encoder/ms-marco-MiniLM-L-6-v2
+2025-11-20 14:38:54 | DEBUG | rag_chain | Türkçe çeviri pipeline aktif. Model: llama-3.1-8b-instant
+2025-11-20 14:38:54 | INFO | rag_chain | RAG zinciri başarıyla kuruldu (TR/EN, 3-seviyeli confidence, reranker + sohbet kapanışlı, temperature=0.00, retriever_k=5, max_tokens=320).
+2025-11-20 14:39:04 | DEBUG | rag_chain | Allowed_sources: ['Textbook-of-Plastic-and-Reconstructive-Surgery.pdf']
+2025-11-20 14:39:04 | DEBUG | rag_chain | Soru Türkçe algılandı, İngilizceye çevriliyor...
+2025-11-20 14:39:05 | DEBUG | rag_chain | TR → EN çeviri tamamlandı.
+2025-11-20 14:39:05 | DEBUG | rag_chain | RAG için kullanılacak soru (EN): What are the fundamental differences between camptodactyly and clinodactyly, and in which cases is surgical intervention necessary?
+2025-11-20 14:39:05 | DEBUG | rag_chain | FAISS'ten 5 doküman döndü. Max skor (confidence): 0.412
+2025-11-20 14:39:05 | DEBUG | rag_chain | Reranker: İlk FAISS sonuç sayısı: 5
+2025-11-20 14:39:05 | DEBUG | rag_chain |   1. skor=-1.751 (page=270)
+2025-11-20 14:39:05 | DEBUG | rag_chain |   2. skor=-3.530 (page=270)
+2025-11-20 14:39:05 | DEBUG | rag_chain |   3. skor=-5.381 (page=480)
+2025-11-20 14:39:05 | DEBUG | rag_chain | allowed_sources filtresi uygulandı. Önce: 3 doküman, sonra: 3 doküman.
+2025-11-20 14:39:05 | DEBUG | rag_chain | Reranker sonrası kullanılan doküman sayısı: 3
+2025-11-20 14:39:05 | DEBUG | rag_chain | Kaynak sayfalar (0-based index): [270, 480]
+2025-11-20 14:39:05 | DEBUG | rag_chain | RAG çalışma modu: hybrid, confidence: 0.412
+2025-11-20 14:39:05 | DEBUG | rag_chain | Kaynak doküman sayısı: 1
+2025-11-20 14:39:06 | DEBUG | rag_chain | Ana LLM cevabı alındı.
+2025-11-20 14:39:07 | DEBUG | rag_chain | EN → TR çeviri tamamlandı.
+2025-11-20 14:39:07 | DEBUG | rag_chain | Kapanış önerisi üretildi.
+2025-11-20 14:39:43 | DEBUG | rag_chain | Allowed_sources: ['Textbook-of-Plastic-and-Reconstructive-Surgery.pdf']
+2025-11-20 14:39:43 | DEBUG | rag_chain | Soru Türkçe algılandı, İngilizceye çevriliyor...
+2025-11-20 14:39:44 | DEBUG | rag_chain | TR → EN çeviri tamamlandı.
+2025-11-20 14:39:44 | DEBUG | rag_chain | RAG için kullanılacak soru (EN): What are the fundamental differences between camptodactyly and clinodactyly, and in which cases is surgical intervention necessary?
+2025-11-20 14:39:44 | DEBUG | rag_chain | FAISS'ten 5 doküman döndü. Max skor (confidence): 0.412
+2025-11-20 14:39:44 | DEBUG | rag_chain | Reranker: İlk FAISS sonuç sayısı: 5
+2025-11-20 14:39:44 | DEBUG | rag_chain |   1. skor=-1.751 (page=270)
+2025-11-20 14:39:44 | DEBUG | rag_chain |   2. skor=-3.530 (page=270)
+2025-11-20 14:39:44 | DEBUG | rag_chain |   3. skor=-5.381 (page=480)
+2025-11-20 14:39:44 | DEBUG | rag_chain | allowed_sources filtresi uygulandı. Önce: 3 doküman, sonra: 3 doküman.
+2025-11-20 14:39:44 | DEBUG | rag_chain | Reranker sonrası kullanılan doküman sayısı: 3
+2025-11-20 14:39:44 | DEBUG | rag_chain | Kaynak sayfalar (0-based index): [270, 480]
+2025-11-20 14:39:44 | DEBUG | rag_chain | RAG çalışma modu: hybrid, confidence: 0.412
+2025-11-20 14:39:44 | DEBUG | rag_chain | Kaynak doküman sayısı: 1
+2025-11-20 14:39:45 | DEBUG | rag_chain | Ana LLM cevabı alındı.
+2025-11-20 14:39:46 | DEBUG | rag_chain | EN → TR çeviri tamamlandı.
+2025-11-20 14:39:47 | DEBUG | rag_chain | Kapanış önerisi üretildi.
+2025-11-20 14:40:14 | INFO | __main__ | RAG zinciri yeniden kuruluyor (temperature=0.30, k=3, max_tokens=2048)
+2025-11-20 14:40:14 | INFO | rag_chain | RAG zinciri kuruluyor (Model: meta-llama/llama-4-scout-17b-16e-instruct, temperature=0.30, retriever_k=3, max_tokens=2048)...
+2025-11-20 14:40:15 | INFO | rag_chain | Reranker CrossEncoder modeli yükleniyor: cross-encoder/ms-marco-MiniLM-L-6-v2
+2025-11-20 14:40:17 | DEBUG | rag_chain | Türkçe çeviri pipeline aktif. Model: llama-3.1-8b-instant
+2025-11-20 14:40:17 | INFO | rag_chain | RAG zinciri başarıyla kuruldu (TR/EN, 3-seviyeli confidence, reranker + sohbet kapanışlı, temperature=0.30, retriever_k=3, max_tokens=2048).
+2025-11-20 14:40:25 | DEBUG | rag_chain | Allowed_sources: ['Textbook-of-Plastic-and-Reconstructive-Surgery.pdf']
+2025-11-20 14:40:25 | DEBUG | rag_chain | Soru Türkçe algılandı, İngilizceye çevriliyor...
+2025-11-20 14:40:25 | DEBUG | rag_chain | TR → EN çeviri tamamlandı.
+2025-11-20 14:40:25 | DEBUG | rag_chain | RAG için kullanılacak soru (EN): What are the fundamental differences between camptodactyly and clinodactyly, and in which cases is surgical intervention necessary?
+2025-11-20 14:40:25 | DEBUG | rag_chain | FAISS'ten 3 doküman döndü. Max skor (confidence): 0.412
+2025-11-20 14:40:25 | DEBUG | rag_chain | Reranker: İlk FAISS sonuç sayısı: 3
+2025-11-20 14:40:25 | DEBUG | rag_chain |   1. skor=-1.751 (page=270)
+2025-11-20 14:40:25 | DEBUG | rag_chain |   2. skor=-3.530 (page=270)
+2025-11-20 14:40:25 | DEBUG | rag_chain |   3. skor=-7.846 (page=277)
+2025-11-20 14:40:25 | DEBUG | rag_chain | allowed_sources filtresi uygulandı. Önce: 3 doküman, sonra: 3 doküman.
+2025-11-20 14:40:25 | DEBUG | rag_chain | Reranker sonrası kullanılan doküman sayısı: 3
+2025-11-20 14:40:25 | DEBUG | rag_chain | Kaynak sayfalar (0-based index): [270, 277]
+2025-11-20 14:40:25 | DEBUG | rag_chain | RAG çalışma modu: hybrid, confidence: 0.412
+2025-11-20 14:40:25 | DEBUG | rag_chain | Kaynak doküman sayısı: 1
+2025-11-20 14:40:27 | DEBUG | rag_chain | Ana LLM cevabı alındı.
+2025-11-20 14:40:28 | DEBUG | rag_chain | EN → TR çeviri tamamlandı.
+2025-11-20 14:40:28 | DEBUG | rag_chain | Kapanış önerisi üretildi.
+2025-11-20 14:41:06 | INFO | __main__ | RAG zinciri yeniden kuruluyor (temperature=0.70, k=8, max_tokens=128)
+2025-11-20 14:41:06 | INFO | rag_chain | RAG zinciri kuruluyor (Model: meta-llama/llama-4-scout-17b-16e-instruct, temperature=0.70, retriever_k=8, max_tokens=128)...
+2025-11-20 14:41:06 | INFO | rag_chain | Reranker CrossEncoder modeli yükleniyor: cross-encoder/ms-marco-MiniLM-L-6-v2
+2025-11-20 14:41:09 | DEBUG | rag_chain | Türkçe çeviri pipeline aktif. Model: llama-3.1-8b-instant
+2025-11-20 14:41:09 | INFO | rag_chain | RAG zinciri başarıyla kuruldu (TR/EN, 3-seviyeli confidence, reranker + sohbet kapanışlı, temperature=0.70, retriever_k=8, max_tokens=128).
+2025-11-20 14:41:16 | DEBUG | rag_chain | Allowed_sources: ['Textbook-of-Plastic-and-Reconstructive-Surgery.pdf']
+2025-11-20 14:41:16 | DEBUG | rag_chain | Soru Türkçe algılandı, İngilizceye çevriliyor...
+2025-11-20 14:41:17 | DEBUG | rag_chain | TR → EN çeviri tamamlandı.
+2025-11-20 14:41:17 | DEBUG | rag_chain | RAG için kullanılacak soru (EN): What are the fundamental differences between camptodactyly and clinodactyly, and in which cases is surgical intervention necessary?
+2025-11-20 14:41:17 | DEBUG | rag_chain | FAISS'ten 8 doküman döndü. Max skor (confidence): 0.412
+2025-11-20 14:41:17 | DEBUG | rag_chain | Reranker: İlk FAISS sonuç sayısı: 8
+2025-11-20 14:41:17 | DEBUG | rag_chain |   1. skor=-1.751 (page=270)
+2025-11-20 14:41:17 | DEBUG | rag_chain |   2. skor=-3.530 (page=270)
+2025-11-20 14:41:17 | DEBUG | rag_chain |   3. skor=-5.381 (page=480)
+2025-11-20 14:41:17 | DEBUG | rag_chain | allowed_sources filtresi uygulandı. Önce: 3 doküman, sonra: 3 doküman.
+2025-11-20 14:41:17 | DEBUG | rag_chain | Reranker sonrası kullanılan doküman sayısı: 3
+2025-11-20 14:41:17 | DEBUG | rag_chain | Kaynak sayfalar (0-based index): [270, 480]
+2025-11-20 14:41:17 | DEBUG | rag_chain | RAG çalışma modu: hybrid, confidence: 0.412
+2025-11-20 14:41:17 | DEBUG | rag_chain | Kaynak doküman sayısı: 1
+2025-11-20 14:41:18 | DEBUG | rag_chain | Ana LLM cevabı alındı.
+2025-11-20 14:41:18 | DEBUG | rag_chain | EN → TR çeviri tamamlandı.
+2025-11-20 14:41:19 | DEBUG | rag_chain | Kapanış önerisi üretildi.
+2025-11-20 14:43:04 | INFO | __main__ | RAG zinciri yeniden kuruluyor (temperature=1.00, k=10, max_tokens=2048)
+2025-11-20 14:43:04 | INFO | rag_chain | RAG zinciri kuruluyor (Model: meta-llama/llama-4-scout-17b-16e-instruct, temperature=1.00, retriever_k=10, max_tokens=2048)...
+2025-11-20 14:43:04 | INFO | rag_chain | Reranker CrossEncoder modeli yükleniyor: cross-encoder/ms-marco-MiniLM-L-6-v2
+2025-11-20 14:43:06 | DEBUG | rag_chain | Türkçe çeviri pipeline aktif. Model: llama-3.1-8b-instant
+2025-11-20 14:43:06 | INFO | rag_chain | RAG zinciri başarıyla kuruldu (TR/EN, 3-seviyeli confidence, reranker + sohbet kapanışlı, temperature=1.00, retriever_k=10, max_tokens=2048).
+2025-11-20 14:43:13 | DEBUG | rag_chain | Allowed_sources: ['Textbook-of-Plastic-and-Reconstructive-Surgery.pdf']
+2025-11-20 14:43:13 | DEBUG | rag_chain | Soru Türkçe algılandı, İngilizceye çevriliyor...
+2025-11-20 14:43:14 | DEBUG | rag_chain | TR → EN çeviri tamamlandı.
+2025-11-20 14:43:14 | DEBUG | rag_chain | RAG için kullanılacak soru (EN): What are the fundamental differences between camptodactyly and clinodactyly, and in which cases is surgical intervention necessary?
+2025-11-20 14:43:14 | DEBUG | rag_chain | FAISS'ten 10 doküman döndü. Max skor (confidence): 0.412
+2025-11-20 14:43:15 | DEBUG | rag_chain | Reranker: İlk FAISS sonuç sayısı: 10
+2025-11-20 14:43:15 | DEBUG | rag_chain |   1. skor=-1.751 (page=270)
+2025-11-20 14:43:15 | DEBUG | rag_chain |   2. skor=-3.530 (page=270)
+2025-11-20 14:43:15 | DEBUG | rag_chain |   3. skor=-4.143 (page=262)
+2025-11-20 14:43:15 | DEBUG | rag_chain | allowed_sources filtresi uygulandı. Önce: 3 doküman, sonra: 3 doküman.
+2025-11-20 14:43:15 | DEBUG | rag_chain | Reranker sonrası kullanılan doküman sayısı: 3
+2025-11-20 14:43:15 | DEBUG | rag_chain | Kaynak sayfalar (0-based index): [262, 270]
+2025-11-20 14:43:15 | DEBUG | rag_chain | RAG çalışma modu: hybrid, confidence: 0.412
+2025-11-20 14:43:15 | DEBUG | rag_chain | Kaynak doküman sayısı: 1
+2025-11-20 14:43:16 | DEBUG | rag_chain | Ana LLM cevabı alındı.
+2025-11-20 14:43:24 | DEBUG | rag_chain | EN → TR çeviri tamamlandı.
+2025-11-20 14:43:24 | DEBUG | rag_chain | Kapanış önerisi üretildi.
+2025-11-20 14:43:30 | DEBUG | rag_chain | Allowed_sources: ['Textbook-of-Plastic-and-Reconstructive-Surgery.pdf']
+2025-11-20 14:43:30 | DEBUG | rag_chain | Soru Türkçe algılandı, İngilizceye çevriliyor...
+2025-11-20 14:43:31 | DEBUG | rag_chain | TR → EN çeviri tamamlandı.
+2025-11-20 14:43:31 | DEBUG | rag_chain | RAG için kullanılacak soru (EN): What are the fundamental differences between camptodactyly and clinodactyly, and in which cases is surgical intervention necessary?
+2025-11-20 14:43:31 | DEBUG | rag_chain | FAISS'ten 10 doküman döndü. Max skor (confidence): 0.412
+2025-11-20 14:43:31 | DEBUG | rag_chain | Reranker: İlk FAISS sonuç sayısı: 10
+2025-11-20 14:43:31 | DEBUG | rag_chain |   1. skor=-1.751 (page=270)
+2025-11-20 14:43:31 | DEBUG | rag_chain |   2. skor=-3.530 (page=270)
+2025-11-20 14:43:31 | DEBUG | rag_chain |   3. skor=-4.143 (page=262)
+2025-11-20 14:43:31 | DEBUG | rag_chain | allowed_sources filtresi uygulandı. Önce: 3 doküman, sonra: 3 doküman.
+2025-11-20 14:43:31 | DEBUG | rag_chain | Reranker sonrası kullanılan doküman sayısı: 3
+2025-11-20 14:43:31 | DEBUG | rag_chain | Kaynak sayfalar (0-based index): [262, 270]
+2025-11-20 14:43:31 | DEBUG | rag_chain | RAG çalışma modu: hybrid, confidence: 0.412
+2025-11-20 14:43:31 | DEBUG | rag_chain | Kaynak doküman sayısı: 1
+2025-11-20 14:43:33 | DEBUG | rag_chain | Ana LLM cevabı alındı.
+2025-11-20 14:43:34 | DEBUG | rag_chain | EN → TR çeviri tamamlandı.
+2025-11-20 14:43:34 | DEBUG | rag_chain | Kapanış önerisi üretildi.
+2025-11-20 14:47:48 | INFO | __main__ | Aynı içerik hash ile tespit edildi, atlandı: Textbook-of-Plastic-and-Reconstructive-Surgery.pdf
+2025-11-20 14:47:49 | INFO | __main__ | Yeni PDF yüklendi ve kaydedildi: uploaded_pdfs\2019 - Grabb and Smith's Plastic Surgery 8th Edition.pdf
+2025-11-20 14:47:49 | INFO | data_processor | PDF yükleniyor: uploaded_pdfs\2019 - Grabb and Smith's Plastic Surgery 8th Edition.pdf (source_name=2019 - Grabb and Smith's Plastic Surgery 8th Edition.pdf)
+2025-11-20 14:48:38 | INFO | data_processor | Toplam 1076 sayfa yüklendi.
+2025-11-20 14:48:39 | INFO | data_processor | Parçalama sonrası toplam 4594 adet doküman parçası oluşturuldu.
+2025-11-20 14:48:39 | INFO | data_processor | FAISS vektör deposu yeni dokümanlarla genişletiliyor (eklenen parça sayısı: 4594)...
+2025-11-20 14:52:12 | INFO | data_processor | FAISS vektör deposu başarıyla genişletildi.
+2025-11-20 14:52:12 | INFO | __main__ | RAG zinciri yeniden kuruluyor (temperature=1.00, k=10, max_tokens=2048)
+2025-11-20 14:52:12 | INFO | rag_chain | RAG zinciri kuruluyor (Model: meta-llama/llama-4-scout-17b-16e-instruct, temperature=1.00, retriever_k=10, max_tokens=2048)...
+2025-11-20 14:52:13 | INFO | rag_chain | Reranker CrossEncoder modeli yükleniyor: cross-encoder/ms-marco-MiniLM-L-6-v2
+2025-11-20 14:52:16 | DEBUG | rag_chain | Türkçe çeviri pipeline aktif. Model: llama-3.1-8b-instant
+2025-11-20 14:52:16 | INFO | rag_chain | RAG zinciri başarıyla kuruldu (TR/EN, 3-seviyeli confidence, reranker + sohbet kapanışlı, temperature=1.00, retriever_k=10, max_tokens=2048).
+2025-11-20 14:52:16 | INFO | __main__ | Yeni dokümanlar indekse eklendi. Toplam yeni parça: 4594, available_sources: ['Textbook-of-Plastic-and-Reconstructive-Surgery.pdf', "2019 - Grabb and Smith's Plastic Surgery 8th Edition.pdf"]
+2025-11-20 14:52:29 | DEBUG | rag_chain | Allowed_sources: ['Textbook-of-Plastic-and-Reconstructive-Surgery.pdf', "2019 - Grabb and Smith's Plastic Surgery 8th Edition.pdf"]
+2025-11-20 14:52:29 | DEBUG | rag_chain | Soru Türkçe algılandı, İngilizceye çevriliyor...
+2025-11-20 14:52:29 | DEBUG | rag_chain | TR → EN çeviri tamamlandı.
+2025-11-20 14:52:29 | DEBUG | rag_chain | RAG için kullanılacak soru (EN): What are the fundamental differences between camptodactyly and clinodactyly, and in which cases is surgical intervention necessary?
+2025-11-20 14:52:29 | DEBUG | rag_chain | FAISS'ten 10 doküman döndü. Max skor (confidence): 0.412
+2025-11-20 14:52:30 | DEBUG | rag_chain | Reranker: İlk FAISS sonuç sayısı: 10
+2025-11-20 14:52:30 | DEBUG | rag_chain |   1. skor=-1.751 (page=270)
+2025-11-20 14:52:30 | DEBUG | rag_chain |   2. skor=-2.414 (page=931)
+2025-11-20 14:52:30 | DEBUG | rag_chain |   3. skor=-3.530 (page=270)
+2025-11-20 14:52:30 | DEBUG | rag_chain | allowed_sources filtresi uygulandı. Önce: 3 doküman, sonra: 3 doküman.
+2025-11-20 14:52:30 | DEBUG | rag_chain | Reranker sonrası kullanılan doküman sayısı: 3
+2025-11-20 14:52:30 | DEBUG | rag_chain | Kaynak sayfalar (0-based index): [270, 931]
+2025-11-20 14:52:30 | DEBUG | rag_chain | RAG çalışma modu: hybrid, confidence: 0.412
+2025-11-20 14:52:30 | DEBUG | rag_chain | Kaynak doküman sayısı: 2
+2025-11-20 14:52:32 | DEBUG | rag_chain | Ana LLM cevabı alındı.
+2025-11-20 14:52:33 | DEBUG | rag_chain | EN → TR çeviri tamamlandı.
+2025-11-20 14:52:33 | DEBUG | rag_chain | Kapanış önerisi üretildi.
+2025-11-20 14:54:18 | INFO | __main__ | RAG zinciri yeniden kuruluyor (temperature=0.00, k=5, max_tokens=384)
+2025-11-20 14:54:18 | INFO | rag_chain | RAG zinciri kuruluyor (Model: meta-llama/llama-4-scout-17b-16e-instruct, temperature=0.00, retriever_k=5, max_tokens=384)...
+2025-11-20 14:54:18 | INFO | rag_chain | Reranker CrossEncoder modeli yükleniyor: cross-encoder/ms-marco-MiniLM-L-6-v2
+2025-11-20 14:54:21 | DEBUG | rag_chain | Türkçe çeviri pipeline aktif. Model: llama-3.1-8b-instant
+2025-11-20 14:54:21 | INFO | rag_chain | RAG zinciri başarıyla kuruldu (TR/EN, 3-seviyeli confidence, reranker + sohbet kapanışlı, temperature=0.00, retriever_k=5, max_tokens=384).
+2025-11-20 14:54:25 | DEBUG | rag_chain | Allowed_sources: ['Textbook-of-Plastic-and-Reconstructive-Surgery.pdf', "2019 - Grabb and Smith's Plastic Surgery 8th Edition.pdf"]
+2025-11-20 14:54:25 | DEBUG | rag_chain | Soru Türkçe algılandı, İngilizceye çevriliyor...
+2025-11-20 14:54:25 | DEBUG | rag_chain | TR → EN çeviri tamamlandı.
+2025-11-20 14:54:25 | DEBUG | rag_chain | RAG için kullanılacak soru (EN): What are the fundamental differences between camptodactyly and clinodactyly, and in which cases is surgical intervention necessary?
+2025-11-20 14:54:25 | DEBUG | rag_chain | FAISS'ten 5 doküman döndü. Max skor (confidence): 0.412
+2025-11-20 14:54:26 | DEBUG | rag_chain | Reranker: İlk FAISS sonuç sayısı: 5
+2025-11-20 14:54:26 | DEBUG | rag_chain |   1. skor=-1.751 (page=270)
+2025-11-20 14:54:26 | DEBUG | rag_chain |   2. skor=-2.414 (page=931)
+2025-11-20 14:54:26 | DEBUG | rag_chain |   3. skor=-3.595 (page=935)
+2025-11-20 14:54:26 | DEBUG | rag_chain | allowed_sources filtresi uygulandı. Önce: 3 doküman, sonra: 3 doküman.
+2025-11-20 14:54:26 | DEBUG | rag_chain | Reranker sonrası kullanılan doküman sayısı: 3
+2025-11-20 14:54:26 | DEBUG | rag_chain | Kaynak sayfalar (0-based index): [270, 931, 935]
+2025-11-20 14:54:26 | DEBUG | rag_chain | RAG çalışma modu: hybrid, confidence: 0.412
+2025-11-20 14:54:26 | DEBUG | rag_chain | Kaynak doküman sayısı: 2
+2025-11-20 14:54:27 | DEBUG | rag_chain | Ana LLM cevabı alındı.
+2025-11-20 14:54:28 | DEBUG | rag_chain | EN → TR çeviri tamamlandı.
+2025-11-20 14:54:28 | DEBUG | rag_chain | Kapanış önerisi üretildi.
+2025-11-20 15:23:52 | INFO | __main__ | Diskten FAISS vektör indeksi yükleniyor: faiss_index_saglik
+2025-11-20 15:23:55 | INFO | __main__ | FAISS vektör indeksi başarıyla yüklendi.
+2025-11-20 15:23:55 | INFO | __main__ | RAG zinciri yeniden kuruluyor (temperature=0.00, k=5, max_tokens=768)
+2025-11-20 15:23:55 | INFO | rag_chain | RAG zinciri kuruluyor (Model: meta-llama/llama-4-scout-17b-16e-instruct, temperature=0.00, retriever_k=5, max_tokens=768)...
+2025-11-20 15:23:56 | INFO | rag_chain | Reranker CrossEncoder modeli yükleniyor: cross-encoder/ms-marco-MiniLM-L-6-v2
+2025-11-20 15:23:58 | DEBUG | rag_chain | Türkçe çeviri pipeline aktif. Model: llama-3.1-8b-instant
+2025-11-20 15:23:58 | INFO | rag_chain | RAG zinciri başarıyla kuruldu (TR/EN, 3-seviyeli confidence, reranker + sohbet kapanışlı, temperature=0.00, retriever_k=5, max_tokens=768).
+2025-11-20 15:23:58 | INFO | __main__ | RAG zinciri başarıyla yeniden kuruldu.
+2025-11-20 15:23:58 | INFO | __main__ | sources.json bulunamadı, boş liste ile başlanacak.
+2025-11-20 15:24:57 | INFO | __main__ | Yeni PDF yüklendi ve kaydedildi: uploaded_pdfs\Textbook-of-Plastic-and-Reconstructive-Surgery.pdf
+2025-11-20 15:24:57 | INFO | data_processor | PDF yükleniyor: uploaded_pdfs\Textbook-of-Plastic-and-Reconstructive-Surgery.pdf (source_name=Textbook-of-Plastic-and-Reconstructive-Surgery.pdf)
+2025-11-20 15:25:14 | INFO | data_processor | Toplam 491 sayfa yüklendi.
+2025-11-20 15:25:14 | INFO | data_processor | Parçalama sonrası toplam 971 adet doküman parçası oluşturuldu.
+2025-11-20 15:25:14 | INFO | data_processor | FAISS vektör deposu yeni dokümanlarla genişletiliyor (eklenen parça sayısı: 971)...
+2025-11-20 15:25:56 | INFO | data_processor | FAISS vektör deposu başarıyla genişletildi.
+2025-11-20 15:25:56 | INFO | __main__ | FAISS vektör indeksi diske kaydedildi: faiss_index_saglik
+2025-11-20 15:25:56 | INFO | __main__ | available_sources metadata kaydedildi: faiss_index_saglik\sources.json
+2025-11-20 15:25:56 | INFO | __main__ | RAG zinciri yeniden kuruluyor (temperature=0.00, k=5, max_tokens=768)
+2025-11-20 15:25:56 | INFO | rag_chain | RAG zinciri kuruluyor (Model: meta-llama/llama-4-scout-17b-16e-instruct, temperature=0.00, retriever_k=5, max_tokens=768)...
+2025-11-20 15:25:57 | INFO | rag_chain | Reranker CrossEncoder modeli yükleniyor: cross-encoder/ms-marco-MiniLM-L-6-v2
+2025-11-20 15:26:00 | DEBUG | rag_chain | Türkçe çeviri pipeline aktif. Model: llama-3.1-8b-instant
+2025-11-20 15:26:00 | INFO | rag_chain | RAG zinciri başarıyla kuruldu (TR/EN, 3-seviyeli confidence, reranker + sohbet kapanışlı, temperature=0.00, retriever_k=5, max_tokens=768).
+2025-11-20 15:26:00 | INFO | __main__ | RAG zinciri başarıyla yeniden kuruldu.
+2025-11-20 15:26:00 | INFO | __main__ | Yeni dokümanlar indekse eklendi. Toplam yeni parça: 971, available_sources: ['Textbook-of-Plastic-and-Reconstructive-Surgery.pdf']
+2025-11-20 15:26:29 | DEBUG | rag_chain | Allowed_sources: ['Textbook-of-Plastic-and-Reconstructive-Surgery.pdf']
+2025-11-20 15:26:29 | DEBUG | rag_chain | RAG için kullanılacak soru (EN): Camptodaktilide primer ve sekonder anomaliler nelerdir?
+2025-11-20 15:26:29 | DEBUG | rag_chain | FAISS'ten 5 doküman döndü. Max skor (confidence): 0.069
+2025-11-20 15:26:29 | DEBUG | rag_chain | Reranker: İlk FAISS sonuç sayısı: 5, top_k (LLM'e giden parça sayısı): 5
+2025-11-20 15:26:29 | DEBUG | rag_chain |   1. skor=-11.019 (page=300)
+2025-11-20 15:26:29 | DEBUG | rag_chain |   2. skor=-11.115 (page=255)
+2025-11-20 15:26:29 | DEBUG | rag_chain |   3. skor=-11.115 (page=255)
+2025-11-20 15:26:29 | DEBUG | rag_chain |   4. skor=-11.115 (page=255)
+2025-11-20 15:26:29 | DEBUG | rag_chain |   5. skor=-11.272 (page=339)
+2025-11-20 15:26:29 | DEBUG | rag_chain | allowed_sources filtresi uygulandı. Önce: 5 doküman, sonra: 3 doküman.
+2025-11-20 15:26:29 | DEBUG | rag_chain | Reranker sonrası kullanılan doküman sayısı: 3
+2025-11-20 15:26:29 | DEBUG | rag_chain | Kaynak sayfalar (0-based index): [255]
+2025-11-20 15:26:29 | DEBUG | rag_chain | RAG çalışma modu: general, confidence: 0.069
+2025-11-20 15:26:29 | DEBUG | rag_chain | Kaynak doküman sayısı: 1
+2025-11-20 15:26:31 | DEBUG | rag_chain | Ana LLM cevabı alındı.
+2025-11-20 15:26:31 | DEBUG | rag_chain | Kapanış önerisi üretildi.
+2025-11-20 15:27:03 | DEBUG | rag_chain | Allowed_sources: ['Textbook-of-Plastic-and-Reconstructive-Surgery.pdf']
+2025-11-20 15:27:03 | DEBUG | rag_chain | Soru Türkçe algılandı, İngilizceye çevriliyor...
+2025-11-20 15:27:03 | DEBUG | rag_chain | TR → EN çeviri tamamlandı.
+2025-11-20 15:27:03 | DEBUG | rag_chain | RAG için kullanılacak soru (EN): What does the epiphyseal bracket in clinodactyly mean, and what surgical options can be applied in this case?
+2025-11-20 15:27:03 | DEBUG | rag_chain | FAISS'ten 5 doküman döndü. Max skor (confidence): 0.459
+2025-11-20 15:27:03 | DEBUG | rag_chain | Reranker: İlk FAISS sonuç sayısı: 5, top_k (LLM'e giden parça sayısı): 5
+2025-11-20 15:27:03 | DEBUG | rag_chain |   1. skor=-0.304 (page=932)
+2025-11-20 15:27:03 | DEBUG | rag_chain |   2. skor=-2.440 (page=271)
+2025-11-20 15:27:03 | DEBUG | rag_chain |   3. skor=-4.304 (page=270)
+2025-11-20 15:27:03 | DEBUG | rag_chain |   4. skor=-4.304 (page=270)
+2025-11-20 15:27:03 | DEBUG | rag_chain |   5. skor=-4.304 (page=270)
+2025-11-20 15:27:03 | DEBUG | rag_chain | allowed_sources filtresi uygulandı. Önce: 5 doküman, sonra: 4 doküman.
+2025-11-20 15:27:03 | DEBUG | rag_chain | Reranker sonrası kullanılan doküman sayısı: 4
+2025-11-20 15:27:03 | DEBUG | rag_chain | Kaynak sayfalar (0-based index): [270, 271]
+2025-11-20 15:27:03 | DEBUG | rag_chain | RAG çalışma modu: hybrid, confidence: 0.459
+2025-11-20 15:27:03 | DEBUG | rag_chain | Kaynak doküman sayısı: 1
+2025-11-20 15:27:04 | DEBUG | rag_chain | Ana LLM cevabı alındı.
+2025-11-20 15:27:05 | DEBUG | rag_chain | EN → TR çeviri tamamlandı.
+2025-11-20 15:27:05 | DEBUG | rag_chain | Kapanış önerisi üretildi.
+2025-11-20 15:30:16 | INFO | __main__ | Diskten FAISS vektör indeksi yükleniyor: faiss_index_saglik
+2025-11-20 15:30:19 | INFO | __main__ | FAISS vektör indeksi başarıyla yüklendi.
+2025-11-20 15:30:19 | INFO | __main__ | RAG zinciri yeniden kuruluyor (temperature=0.00, k=5, max_tokens=768)
+2025-11-20 15:30:19 | INFO | rag_chain | RAG zinciri kuruluyor (Model: meta-llama/llama-4-scout-17b-16e-instruct, temperature=0.00, retriever_k=5, max_tokens=768)...
+2025-11-20 15:30:19 | INFO | rag_chain | Reranker CrossEncoder modeli yükleniyor: cross-encoder/ms-marco-MiniLM-L-6-v2
+2025-11-20 15:30:22 | DEBUG | rag_chain | Türkçe çeviri pipeline aktif. Model: llama-3.1-8b-instant
+2025-11-20 15:30:22 | INFO | rag_chain | RAG zinciri başarıyla kuruldu (TR/EN, 3-seviyeli confidence, reranker + sohbet kapanışlı, temperature=0.00, retriever_k=5, max_tokens=768).
+2025-11-20 15:30:22 | INFO | __main__ | RAG zinciri başarıyla yeniden kuruldu.
+2025-11-20 15:30:22 | INFO | __main__ | sources.json yüklendi. Doküman sayısı: 1
