@@ -57,10 +57,19 @@ logger = setup_logger(__name__)
 if DEBUG:
     logger.setLevel(logging.DEBUG)
 
-# Groq API anahtarı ortam değişkeninden okunur
-GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+# Groq API anahtarı:
+# - Önce ortam değişkeninden (os.getenv)
+# - Sonra Streamlit secrets'den (st.secrets) okunmaya çalışılır.
+try:
+    import streamlit as st
+except ImportError:
+    st = None
 
-
+if st is not None:
+    GROQ_API_KEY = os.getenv("GROQ_API_KEY") or st.secrets.get("GROQ_API_KEY")
+else:
+    GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+    
 def is_turkish(text: str) -> bool:
     """
     Metinde Türkçe karakter olup olmadığını basitçe kontrol eder.
